@@ -1,0 +1,5 @@
+import qrcode 
+qr = qrcode.QRCode() # 初始化qrcode
+qr.add_data(‘https://chem.buct.edu.cn/2019/1217/c5531a70827/page.htm') # 向二维码添加内容
+img = qr.make_image(fill_color="lime", back_color="white") # 制作二维码
+img.save('test.png') # 保存图片
