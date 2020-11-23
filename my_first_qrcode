@@ -1,0 +1,5 @@
+import qrcode 
+qr = qrcode.QRCode() # 初始化qrcode
+qr.add_data(‘我的第一个二维码，My First QRcode') # 向二维码添加内容
+img = qr.make_image() # 制作二维码
+img.save('test.png') # 保存图片
