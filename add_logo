@@ -1,0 +1,20 @@
+import qrcode 
+from PIL import Image
+qr = qrcode.QRCode() 
+qr.add_data('https://chem.buct.edu.cn/2019/1217/c5531a70827/page.htm') 
+img = qr.make_image(fill_color="lime", back_color="white") 
+icon = Image.open("logo.jpg")
+img_w, img_h = img.size
+factor = 6
+size_w = int(img_w / factor)
+size_h = int(img_h / factor)
+icon_w, icon_h = icon.size
+if icon_w > size_w:
+    icon_w = size_w
+if icon_h > size_h:
+    icon_h = size_h
+icon = icon.resize((icon_w, icon_h), Image.ANTIALIAS)
+w = int((img_w - icon_w) / 2)
+h = int((img_h - icon_h) / 2)
+img.paste(icon, (w, h), mask=None)
+img.save('test.png') 
