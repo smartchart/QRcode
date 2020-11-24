@@ -1,7 +1,7 @@
 import qrcode 
 from PIL import Image
 qr = qrcode.QRCode() 
-qr.add_data('https://chem.buct.edu.cn/2019/1217/c5531a70827/page.htm') 
+qr.add_data('https://jiaowuchu.buct.edu.cn/') 
 img = qr.make_image(fill_color="lime", back_color="white") 
 icon = Image.open("logo.jpg")
 img_w, img_h = img.size
