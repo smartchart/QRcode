@@ -1,5 +1,5 @@
 import qrcode 
 qr = qrcode.QRCode() # 初始化qrcode
-qr.add_data(‘https://jiaowuchu.buct.edu.cn/') # 向二维码添加内容
+qr.add_data('https://jiaowuchu.buct.edu.cn/') # 向二维码添加内容
 img = qr.make_image(fill_color="lime", back_color="white") # 制作二维码
 img.save('test.png') # 保存图片
